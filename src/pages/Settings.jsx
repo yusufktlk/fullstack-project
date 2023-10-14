@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
 
 function Settings() {
+  const [firstName, setFirstName] = useState([])
+  const [lastName, setLastName] = useState([])
+  const [email, setEmail] = useState([])
+
   return (
     <div className='md:flex'>
         <Sidebar />
@@ -44,6 +48,7 @@ function Settings() {
                       </label>
                       <div className="mt-2">
                         <input
+                          onChange={(e) => setFirstName(e.target.value)}
                           type="text"
                           name="first-name"
                           id="first-name"
@@ -60,6 +65,7 @@ function Settings() {
                       </label>
                       <div className="mt-2">
                         <input
+                          onChange={(e) => setLastName(e.target.value)}
                           type="text"
                           name="last-name"
                           id="last-name"
@@ -75,6 +81,7 @@ function Settings() {
                       </label>
                       <div className="mt-2">
                         <input
+                          onChange={(e) => setEmail(e.target.value)}
                           id="email"
                           name="email"
                           type="email"

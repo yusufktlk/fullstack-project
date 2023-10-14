@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'
 function Login() {
   const [signup, setSignUp] = useState(false)
 
+  const [email, setEmail] = useState([])
+  const [password, setPassword] = useState([])
+
   const navigate = useNavigate()
 
   return (
@@ -28,6 +31,7 @@ function Login() {
             </label>
             <div className="mt-2">
               <input
+                onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 name="email"
                 type="email"
@@ -51,6 +55,7 @@ function Login() {
             </div>
             <div className="mt-2">
               <input
+                onChange={(e) => setPassword(e.target.value)}
                 id="password"
                 name="password"
                 type="password"

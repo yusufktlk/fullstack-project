@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '../components/Sidebar'
 import PinnedProjects from '../components/PinnedProject.jsx'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
     const projects = [
@@ -143,6 +144,8 @@ function Home() {
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
+
+    const navigate = useNavigate()
   return (
     <div className='md:flex'>
         <Sidebar />
@@ -159,6 +162,7 @@ function Home() {
                   Share
                 </button>
                 <button
+                  onClick={() => navigate("/create")}
                   type="button"
                   className="order-0 inline-flex items-center rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 sm:order-1 sm:ml-3"
                 >
