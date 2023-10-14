@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+  const [signup, setSignUp] = useState(false)
+
+  const navigate = useNavigate()
+
   return (
     <>
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -11,7 +16,7 @@ function Login() {
           alt="Your Company"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+          {signup ? "Register" : "Sign in to your account"}
         </h2>
       </div>
 
@@ -58,6 +63,7 @@ function Login() {
 
           <div>
             <button
+              onClick={() => navigate("/home")}
               type="submit"
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
@@ -72,6 +78,13 @@ function Login() {
             Start a 14 day free trial
           </a>
         </p>
+
+        <p className='font-bold tracking-wider mt-3 ml-[71px] text-[13px]'>{signup ? "Are you have already account?" : "Don't have an account?"} 
+            <span onClick={() => setSignUp(!signup)} className='text-indigo-600 font-semibold cursor-pointer ml-2'>
+              {signup ? "Login" : "Register"}
+            </span>
+        </p>
+
       </div>
     </div>
   </>
