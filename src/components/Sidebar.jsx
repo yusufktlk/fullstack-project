@@ -7,7 +7,7 @@ import {
   EllipsisVerticalIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/20/solid'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const navigation = [
   { name: 'Home', href: '/home', icon: HomeIcon, current: true },
@@ -190,30 +190,28 @@ export default function Example() {
                   <div className="py-1">
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                        onClick={() => navigate('/home/profile')}
-                          href="#"
+                        <Link
+                          to={"/profile"}
                           className={classNames(
                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                             'block px-4 py-2 text-sm'
                           )}
                         >
                           View profile
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          onClick={() => navigate('/home/settings')}
-                          href="#"
+                        <Link
+                          to={"/settings"}
                           className={classNames(
                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                             'block px-4 py-2 text-sm'
                           )}
                         >
                           Settings
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item>
@@ -404,28 +402,28 @@ export default function Example() {
                       <div className="py-1">
                         <Menu.Item>
                           {({ active }) => (
-                            <a
-                              href="/home/profile"
+                            <Link
+                              to={"/profile"}
                               className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block px-4 py-2 text-sm'
                               )}
                             >
                               View profile
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <a
-                              href="/home/settings"
+                            <Link
+                              to={"/settings"}
                               className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block px-4 py-2 text-sm'
                               )}
                             >
                               Settings
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>

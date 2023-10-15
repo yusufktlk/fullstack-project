@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import PinnedProjects from '../components/PinnedProject.jsx'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Home() {
@@ -168,14 +168,15 @@ function Home() {
                     >
                   Share
                 </button>
-                <button
-                  onClick={() => navigate("/home/create")}
+                <Link
+                  to={"/create"}
+                  // onClick={() => navigate("/create")}
                   // onClick={() => setOpen(!open)}
                   type="button"
                   className="order-0 inline-flex items-center rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 sm:order-1 sm:ml-3"
                 >
                   Create
-                </button>
+                </Link>
               
               </div>
             </div>
@@ -200,7 +201,7 @@ function Home() {
                         </span>
                       </span>
                       <ChevronRightIcon
-                        onClick={() => navigate("/home/edit")}
+                        onClick={() => navigate("/edit")}
                         className="ml-4 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                         aria-hidden="true"
                       />
@@ -282,9 +283,9 @@ function Home() {
                           {project.lastUpdated}
                         </td>
                         <td className="whitespace-nowrap px-6 py-3 text-right text-sm font-medium">
-                          <a href="/home/edit" className="text-indigo-600 hover:text-indigo-900">
+                          <Link to={"/edit"} className="text-indigo-600 hover:text-indigo-900">
                             Edit
-                          </a>
+                          </Link>
                         </td>
                       </tr>
                     ))}

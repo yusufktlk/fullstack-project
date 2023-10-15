@@ -13,10 +13,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/home/profile' element={<Profile />} />
-          <Route path='/home/settings' element={<Settings />} />
-          <Route path='/home/create' element={<Create />} />
-          <Route path='/home/edit' element={<Edit />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/edit' element={<Edit />} />
         </Routes>
       </Router>
     </>
