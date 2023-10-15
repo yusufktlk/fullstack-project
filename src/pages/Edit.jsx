@@ -1,34 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Sidebar from '../components/Sidebar'
 
-function Create(props) {
-  // const [projectName, setProjectName] = useState("")
-  // const [projectInitials, setProjectInitials] = useState("")
-  // const [teamName, setTeamName] = useState("")
-  // const [totalMembers, setTotalMembers] = useState("")
-
-  // const newProject = {
-  //   title: projectName,
-  //   initials: projectInitials,
-  //   team: teamName,
-  //   totalMembers: totalMembers
-  // }
-
-  
-
-  // const addProjectList =  () => {
-  //   props.projects.push(newProject)
-  //   console.log(props.projects)
-  // }
-
-
+function Edit() {
   return (
-    <div className='md:flex'>
+    <div className='md:flex '>
+        <Sidebar />
 
-      <Sidebar /> 
-
-      <main className='flex flex-col m-auto  md:ml-[350px]  font-thin mt-12 md:mt-12 bg-gray-200 rounded-xl p-4 md:p-11'>
-            <h1 className='text-5xl ml-24 md:m-auto tracking-wider'>Create Project!</h1>
+        <main className='flex flex-col m-auto  md:ml-[350px]  font-thin mt-12 md:mt-12 bg-gray-200 rounded-xl p-4 md:p-11'>
+            <h1 className='text-5xl ml-24 md:m-auto tracking-wider'>Edit the Project!</h1>
             
             <div className='flex flex-col font-bold gap-y-10 mt-12 md:mt-20'>
                 <div className='flex gap-x-4 items-center'>
@@ -80,7 +59,7 @@ function Create(props) {
                   className='bg-black w-64 h-12 m-auto rounded-xl p-2 mt-2 text-white'
                   onClick={() => props.addProjectList()}
                   >
-                    Create Project
+                    Edit Project
                 </button>
             </div>
 
@@ -89,4 +68,4 @@ function Create(props) {
   )
 }
 
-export default Create
+export default Edit

@@ -43,17 +43,10 @@ function Login() {
           </div>
 
           <div>
-            <div className="flex items-center justify-between">
-              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                Password
-              </label>
-              <div className="text-sm">
-                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                  Forgot password?
-                </a>
-              </div>
-            </div>
-            <div className="mt-2">
+            <div className="mt-6">
+            <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+              Password
+            </label>
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 id="password"
@@ -77,14 +70,7 @@ function Login() {
           </div>
         </form>
 
-        <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member?{' '}
-          <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-            Start a 14 day free trial
-          </a>
-        </p>
-
-        <p className='font-bold tracking-wider mt-3 ml-[71px] text-[13px]'>{signup ? "Are you have already account?" : "Don't have an account?"} 
+        <p className='font-bold tracking-wider mt-4 ml-[71px] text-[13px]'>{signup ? "Are you have already account?" : "Don't have an account?"} 
             <span onClick={() => setSignUp(!signup)} className='text-indigo-600 font-semibold cursor-pointer ml-2'>
               {signup ? "Login" : "Register"}
             </span>
