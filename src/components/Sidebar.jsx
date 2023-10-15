@@ -89,10 +89,10 @@ export default function Example() {
                     <nav className="px-2">
                       <div className="space-y-1">
                         {navigation.map((item) => (
-                          <a
+                          <Link
                             
                             key={item.name}
-                            href={item.href}
+                            to={item.href}
                             className={classNames(
                               item.current
                                 ? 'bg-gray-100 text-gray-900'
@@ -109,7 +109,7 @@ export default function Example() {
                               aria-hidden="true"
                             />
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                       <div className="mt-8">
@@ -299,9 +299,9 @@ export default function Example() {
             <nav className="mt-6 px-3">
               <div className="space-y-1">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className={classNames(
                       item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900',
                       'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
@@ -316,7 +316,7 @@ export default function Example() {
                       aria-hidden="true"
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="mt-8">
@@ -326,9 +326,9 @@ export default function Example() {
                 </h3>
                 <div className="mt-1 space-y-1" role="group" aria-labelledby="desktop-teams-headline">
                   {teams.map((team) => (
-                    <a
+                    <Link
                       key={team.name}
-                      href={team.href}
+                      to={team.href}
                       className="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
                     >
                       <span
@@ -336,7 +336,7 @@ export default function Example() {
                         aria-hidden="true"
                       />
                       <span className="truncate">{team.name}</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
