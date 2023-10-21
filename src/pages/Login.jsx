@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Button from '../components/Button'
 
 function Login() {
   const [signup, setSignUp] = useState(false)
@@ -59,14 +60,13 @@ function Login() {
             </div>
           </div>
 
-          <div>
-            <button
-              onClick={() => navigate("/home")}
+          <div 
+            onClick={() => navigate("/home")}>
+            <Button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              buttonText={!signup ? "Sign In" : "Register"}
             >
-              Sign in
-            </button>
+            </Button>
           </div>
         </form>
 
