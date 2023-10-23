@@ -4,25 +4,11 @@ import Input from '../components/Input'
 import PinnedProjects from '../components/PinnedProject'
 import Button from '../components/Button'
 
-function Create(props) {
+function Create() {
   const [projectName, setProjectName] = useState("")
   const [projectInitials, setProjectInitials] = useState("")
   const [teamName, setTeamName] = useState("")
   const [totalMembers, setTotalMembers] = useState("")
-
-  // const newProject = {
-  //   title: projectName,
-  //   initials: projectInitials,
-  //   team: teamName,
-  //   totalMembers: totalMembers
-  // }
-
-
-  // const addProjectList =  () => {
-  //   props.projects.push(newProject)
-  //   console.log(props.projects)
-  // }
-
 
   return (
     <div className='md:flex'>
@@ -48,30 +34,27 @@ function Create(props) {
               <div className='flex '>
                     <h1 className='text-xl w-44 '>Project Name:</h1>
                     <Input 
-                      onChange={(e) => props.setProjectName(e.target.value)}
+                      onChange={(e) => setProjectName(e.target.value)}
                       placeholder={"Project Name"}
                       type={"text"}
-                      id={"projectName"}
                     />
                 </div>
 
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Project Initials:</h1>
                     <Input 
-                      onChange={(e) => props.setProjectInitials(e.target.value)}
+                      onChange={(e) => setProjectInitials(e.target.value)}
                       placeholder={"Project Initials"}
                       type={"text"}
-                      id={"projectInitialsInput"}
                     />
                 </div>
 
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Team Name:</h1>
                     <Input 
-                      onChange={(e) => props.setTeamName(e.target.value)}
+                      onChange={(e) => setTeamName(e.target.value)}
                       placeholder={"Team Name"}
                       type={"text"}
-                      id={"teamNameInput"}
                     />
                 </div>
           </div>
@@ -81,27 +64,24 @@ function Create(props) {
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Total Members:</h1>
                   <Input
-                   onChange={(e) => props.setTotalMembers(e.target.value)}
+                   onChange={(e) => setTotalMembers(e.target.value)}
                    placeholder={"Total Members"}
                    type={"text"}
-                   id={"totalMembersInput"}
                   /> 
               </div>
 
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Members Names:</h1>
                   <Input
-                   onChange={(e) => props.setMembers(e.target.value)}
+                   onChange={(e) => setMembers(e.target.value)}
                    placeholder={"Seymen, Yusuf"}
-                   type={"text"}
-                   id={"memberNamesInput"} />
+                   type={"text"}/>
               </div>
             </div>
         </form>
         <div className='ml-32 md:ml-[450px] w-[300px] mt-20 mb-8'>
           <Button
               buttonText={"Create Project"}
-              // onClick={() => props.addProjectList()}
           />
         </div>
       </main>
