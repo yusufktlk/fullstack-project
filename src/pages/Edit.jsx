@@ -17,7 +17,7 @@ function Edit() {
 
         <main className='flex-1'>
         <div className=" px-7 py-5 ">
-            <h1 className="text-lg font-medium text-gray-900 sm:truncate">Edit</h1>          
+            <h1 className="text-lg font-medium text-gray-900 sm:truncate">Edit</h1>            
         </div>
         
         <hr />
@@ -86,7 +86,6 @@ function Edit() {
         </form>
         <div className='ml-32 md:ml-[450px] w-[300px] mt-20 mb-8'>
           <Button
-              theme={"rgb(99 102 241)"} 
               buttonText={"Edit the Project"}
               // onClick={() => props.addProjectList()}
           />

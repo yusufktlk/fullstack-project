@@ -63,7 +63,6 @@ function Login() {
           <div 
             onClick={() => navigate("/home")}>
             <Button
-              theme={"rgb(99 102 241)"} 
               type="submit"
               buttonText={!signup ? "Sign In" : "Register"}
             >
