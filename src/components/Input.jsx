@@ -7,7 +7,7 @@ function Input({placeholder, type, id}) {
         type={type}
         id={id}
         placeholder={placeholder}
-        className="block w-full rounded-md placeholder:text-gray-400 p-1 border-2 border-gray-400 placeholder:pl-8"
+        className="block w-full rounded-md placeholder:text-gray-400 p-1 border-2 border-gray-400 placeholder:ml-8"
       />
     </div>
   )

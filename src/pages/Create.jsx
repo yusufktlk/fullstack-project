@@ -100,6 +100,7 @@ function Create(props) {
         </form>
         <div className='ml-32 md:ml-[450px] w-[300px] mt-20 mb-8'>
           <Button
+              theme={"rgb(99 102 241)"} 
               buttonText={"Create Project"}
               // onClick={() => props.addProjectList()}
           />
