@@ -34,7 +34,7 @@ function Edit() {
               <div className='flex '>
                     <h1 className='text-xl w-44 '>Edit Project Name:</h1>
                     <Input 
-                      onChange={(e) => props.setProjectName(e.target.value)}
+                      onChange={(e) => setProjectName(e.target.value)}
                       placeholder={"Project Name"}
                       type={"text"}
                       id={"projectName"}
@@ -44,7 +44,7 @@ function Edit() {
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Edit Project Initials:</h1>
                     <Input 
-                      onChange={(e) => props.setProjectInitials(e.target.value)}
+                      onChange={(e) => setProjectInitials(e.target.value)}
                       placeholder={"Project Initials"}
                       type={"text"}
                       id={"projectInitialsInput"}
@@ -54,7 +54,7 @@ function Edit() {
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Edit Team Name:</h1>
                     <Input 
-                      onChange={(e) => props.setTeamName(e.target.value)}
+                      onChange={(e) => setTeamName(e.target.value)}
                       placeholder={"Team Name"}
                       type={"text"}
                       id={"teamNameInput"}
@@ -67,7 +67,7 @@ function Edit() {
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Edit Total Members:</h1>
                   <Input
-                   onChange={(e) => props.setTotalMembers(e.target.value)}
+                   onChange={(e) => setTotalMembers(e.target.value)}
                    placeholder={"Total Members"}
                    type={"text"}
                    id={"totalMembersInput"}
@@ -77,7 +77,7 @@ function Edit() {
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Edit Members Names:</h1>
                   <Input
-                   onChange={(e) => props.setMembers(e.target.value)}
+                   onChange={(e) => setMembers(e.target.value)}
                    placeholder={"Seymen, Yusuf"}
                    type={"text"}
                    id={"memberNamesInput"} />
@@ -87,7 +87,6 @@ function Edit() {
         <div className='ml-32 md:ml-[450px] w-[300px] mt-20 mb-8'>
           <Button
               buttonText={"Edit the Project"}
-              // onClick={() => props.addProjectList()}
           />
         </div>
       </main>
