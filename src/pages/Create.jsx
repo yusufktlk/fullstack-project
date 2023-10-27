@@ -5,10 +5,7 @@ import PinnedProjects from '../components/PinnedProject'
 import Button from '../components/Button'
 
 function Create() {
-  const [projectName, setProjectName] = useState("")
-  const [projectInitials, setProjectInitials] = useState("")
-  const [teamName, setTeamName] = useState("")
-  const [totalMembers, setTotalMembers] = useState("")
+  const [project, setProject] = useState({projectName:"",teaminitials:"", teamName:"", totalMembers:"", members:""});
 
   return (
     <div className='md:flex'>
@@ -80,9 +77,9 @@ function Create() {
             </div>
         </form>
         <div className='ml-32 md:ml-[450px] w-[300px] mt-20 mb-8'>
-          <Button
-              buttonText={"Create Project"}
-          />
+          <Button>
+            Create Project
+          </Button>
         </div>
       </main>
     </div>

@@ -59,8 +59,8 @@ function Register() {
             className='mt-6'>
             <Button
               type="text"
-              buttonText={"Register"}
             >
+              Register
             </Button>
           </div>
 

@@ -62,8 +62,8 @@ function Login() {
             onClick={() => navigate("/home")}>
             <Button
               type="submit"
-              buttonText={"Sign In"}
             >
+              Sign In 
             </Button>
           </div>
         </form>

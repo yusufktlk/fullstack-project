@@ -1,14 +1,13 @@
 import React from 'react'
 
-function Button({buttonText, theme}) {
-      // theme === "blue" ?  "	rgb(99 102 241)" :  "rgb(220 38 38)" 
-
+function Button(props) {
+  
   return (
     <button 
     className='bg-indigo-500 w-full h-12  rounded-xl p-2 text-white'
-    style={{backgroundColor: theme}}
+    style={{backgroundColor: props.theme}}
     >
-      {buttonText}
+      {props.children}
   </button>
   )
 }
