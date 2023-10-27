@@ -28,7 +28,6 @@ function Settings() {
             
             <hr />
 
-            {/* Settings forms */}
             <div className="">
               <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 px-4 py-4 md:py-14 sm:px-6 md:grid-cols-3 lg:px-8">
                 <div>
@@ -49,9 +48,10 @@ function Settings() {
                       />
                       <div>
                         <Button 
-                        theme={"rgb(99 102 241)"} 
-                        buttonText={"Change avatar"}
-                        />
+                        theme={"rgb(99 102 241)"}>
+                        Change avatar  
+                        </Button> 
+                        
                         <p className="mt-2 text-xs leading-5 text-gray-400">JPG, GIF or PNG. 1MB max.</p>
                       </div>
                     </div>
@@ -136,9 +136,9 @@ function Settings() {
 
                   <div className="mt-8 flex w-40">
                     <Button 
-                    theme={"rgb(99 102 241)"}  
-                    buttonText={"Save"}
-                    />
+                      theme={"rgb(99 102 241)"}>
+                      Save  
+                    </Button> 
                   </div>
                 </form>
               </div>
@@ -196,10 +196,10 @@ function Settings() {
                   </div>
 
                   <div className="mt-8 flex w-40">
-                     <Button 
-                        theme={"rgb(99 102 241)"} 
-                        buttonText={"Save"}
-                      />
+                    <Button 
+                      theme={"rgb(99 102 241)"}>
+                      Save  
+                    </Button> 
                   </div>
                 </form>
               </div>
@@ -231,10 +231,10 @@ function Settings() {
                   </div>
 
                   <div className="mt-8 flex w-40 text-[14px] text-center">
-                    <Button
-                    theme={"rgb(99 102 241)"} 
-                    buttonText={"Log out other sessions"}
-                    />
+                    <Button 
+                      theme={"rgb(99 102 241)"}>
+                      Log out other sessions  
+                    </Button> 
                   </div>
                 </form>
               </div>
@@ -249,10 +249,12 @@ function Settings() {
                 </div>
 
                 <form className="flex items-start md:col-span-2 w-40 text-[14px] mt-6">
-                  <Button 
-                    buttonText={"Yes, delete my account"}
-                    theme={"rgb(220 38 38)"}
-                    />
+                    <div className='bg-red'>
+                    <Button 
+                      theme="rgb(220 38 38)">
+                      Yes, delete my account
+                    </Button> 
+                    </div>
                 </form>
               </div>
             </div>
