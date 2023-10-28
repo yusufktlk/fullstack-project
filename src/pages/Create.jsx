@@ -5,7 +5,21 @@ import PinnedProjects from '../components/PinnedProject'
 import Button from '../components/Button'
 
 function Create() {
-  const [project, setProject] = useState({projectName:"",teaminitials:"", teamName:"", totalMembers:"", members:""});
+  const [project, setProject] = useState({
+    projectName: "",
+    teamInitials: "", 
+    teamName: "", 
+    totalMembers: "", 
+    members: ""
+  });
+
+  const handleChange = (e) => {
+    const {name,value} = e.target;
+    setProject(project=> ({
+      ...project,
+      [name]: value
+    }))
+  }
 
   return (
     <div className='md:flex'>
@@ -31,27 +45,36 @@ function Create() {
               <div className='flex '>
                     <h1 className='text-xl w-44 '>Project Name:</h1>
                     <Input 
-                      onChange={(e) => setProjectName(e.target.value)}
-                      placeholder={"Project Name"}
-                      type={"text"}
+                       onChange={handleChange}
+                       name="projectName"
+                       value={project.projectName}
+                       placeholder="Project Name"
+                       type="text"
+                       id="projectName"
                     />
                 </div>
 
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Project Initials:</h1>
                     <Input 
-                      onChange={(e) => setProjectInitials(e.target.value)}
+                      onChange={handleChange}
+                      name="teamInitials"
+                      value={project.teamInitials}
                       placeholder={"Project Initials"}
                       type={"text"}
+                      id={"projectInitialsInput"}
                     />
                 </div>
 
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Team Name:</h1>
                     <Input 
-                      onChange={(e) => setTeamName(e.target.value)}
+                      onChange={handleChange}
+                      name="teamName"
+                      value={project.teamName}
                       placeholder={"Team Name"}
                       type={"text"}
+                      id={"teamNameInput"}
                     />
                 </div>
           </div>
@@ -61,18 +84,25 @@ function Create() {
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Total Members:</h1>
                   <Input
-                   onChange={(e) => setTotalMembers(e.target.value)}
+                   onChange={handleChange}
+                   name="totalMembers"
+                   value={project.totalMembers}
                    placeholder={"Total Members"}
                    type={"text"}
+                   id={"totalMembersInput"}
                   /> 
               </div>
 
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Members Names:</h1>
                   <Input
-                   onChange={(e) => setMembers(e.target.value)}
-                   placeholder={"Seymen, Yusuf"}
-                   type={"text"}/>
+                    onChange={handleChange}
+                    name="members"
+                    value={project.members}
+                    placeholder={"Seymen, Yusuf"}
+                    type={"text"}
+                    id={"memberNamesInput"} 
+                  />
               </div>
             </div>
         </form>

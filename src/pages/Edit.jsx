@@ -5,7 +5,21 @@ import PinnedProjects from '../components/PinnedProject'
 import Button from '../components/Button'
 
 function Edit() {
-  const [project, setProject] = useState({projectName:"",teaminitials:"", teamName:"", totalMembers:"", members:""});
+  const [project, setProject] = useState({
+    projectName: "",
+    teamInitials: "", 
+    teamName: "", 
+    totalMembers: "", 
+    members: ""
+  });
+
+  const handleChange = (e) => {
+    const {name,value} = e.target;
+    setProject(project=> ({
+      ...project,
+      [name]: value
+    }))
+  }
 
   return (
     <div className='md:flex '>
@@ -30,17 +44,21 @@ function Edit() {
               <div className='flex '>
                     <h1 className='text-xl w-44 '>Edit Project Name:</h1>
                     <Input 
-                      onChange={(e) => setProject.projectName(e.target.value)}
-                      placeholder={"Project Name"}
-                      type={"text"}
-                      id={"projectName"}
+                      onChange={handleChange}
+                      name="projectName"
+                      value={project.projectName}
+                      placeholder="Project Name"
+                      type="text"
+                      id="projectName"
                     />
                 </div>
 
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Edit Project Initials:</h1>
                     <Input 
-                      onChange={(e) => setProject.teaminitials(e.target.value)}
+                      onChange={handleChange}
+                      name="teamInitials"
+                      value={project.teamInitials}
                       placeholder={"Project Initials"}
                       type={"text"}
                       id={"projectInitialsInput"}
@@ -50,7 +68,9 @@ function Edit() {
                 <div className='flex'>
                     <h1 className='text-xl w-44 '>Edit Team Name:</h1>
                     <Input 
-                      onChange={(e) => setProject.teamName(e.target.value)}
+                      onChange={handleChange}
+                      name="teamName"
+                      value={project.teamName}
                       placeholder={"Team Name"}
                       type={"text"}
                       id={"teamNameInput"}
@@ -63,7 +83,9 @@ function Edit() {
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Edit Total Members:</h1>
                   <Input
-                   onChange={(e) => setProject.totalMembers(e.target.value)}
+                   onChange={handleChange}
+                   name="totalMembers"
+                   value={project.totalMembers}
                    placeholder={"Total Members"}
                    type={"text"}
                    id={"totalMembersInput"}
@@ -73,7 +95,9 @@ function Edit() {
               <div className='flex gap-x-4 items-center'>
                   <h1 className='text-xl w-40 md:w-44'>Edit Members Names:</h1>
                   <Input
-                   onChange={(e) => setProject.members(e.target.value)}
+                   onChange={handleChange}
+                   name="members"
+                   value={project.members}
                    placeholder={"Seymen, Yusuf"}
                    type={"text"}
                    id={"memberNamesInput"} />
