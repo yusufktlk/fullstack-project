@@ -5,6 +5,7 @@ import Settings from './pages/Settings';
 import Create from './pages/Create';
 import Profile from './pages/Profile';
 import Edit from './pages/Edit';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Login />} />
+          <Route path='/register' element={<Register />} />
           <Route path='/home' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/settings' element={<Settings />} />

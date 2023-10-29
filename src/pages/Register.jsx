@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
 import Button from '../components/Button'
+import { Link, useNavigate } from 'react-router-dom'
 
-function Login() {
-  const [email, setEmail] = useState([])
-  const [password, setPassword] = useState([])
-
-  const navigate = useNavigate()
-
+function Register() {
+    const navigate = useNavigate()
   return (
     <>
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           className="mx-auto h-10 w-auto"
@@ -18,7 +14,7 @@ function Login() {
           alt="Your Company"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+          Register
         </h2>
       </div>
 
@@ -30,7 +26,6 @@ function Login() {
             </label>
             <div className="mt-2">
               <input
-                onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 name="email"
                 type="email"
@@ -47,7 +42,6 @@ function Login() {
               Password
             </label>
               <input
-                onChange={(e) => setPassword(e.target.value)}
                 id="password"
                 name="password"
                 type="password"
@@ -58,28 +52,28 @@ function Login() {
             </div>
           </div>
 
-          <div 
-            onClick={() => navigate("/home")}>
+         
+        </form>
+        <div
+            onClick={() => navigate("/")}
+            className='mt-6'>
             <Button
-              type="submit"
+              type="text"
             >
-              Sign In 
+              Register
             </Button>
           </div>
-        </form>
 
-        <p className='font-bold tracking-wider mt-4 ml-[71px] text-[13px]'>Don't have an account?
-            <Link 
-              to={"/register"}
-              className='text-indigo-600 font-semibold cursor-pointer ml-2'>
-              Register
+        <p className='font-bold tracking-wider mt-4 ml-[71px] text-[13px]'>Are you have already account?
+            <Link to={"/"} className='text-indigo-600 font-semibold cursor-pointer ml-2'>
+              Login
             </Link>
         </p>
 
       </div>
     </div>
-  </>
+    </>
   )
 }
 
-export default Login
+export default Register
