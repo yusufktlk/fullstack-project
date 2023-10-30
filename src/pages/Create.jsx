@@ -27,7 +27,7 @@ function Create() {
       <Sidebar /> 
 
       <main className='flex-1'>
-        <div className=" px-7 py-5 ">
+        <div className="px-4 md:px-7 py-5 ">
             <h1 className="text-lg font-medium text-gray-900 sm:truncate">Create</h1>            
         </div>
         

@@ -157,7 +157,7 @@ function Home() {
 
 
         <main className='flex-1'>
-            <div className="border-b border-gray-200 px-4 py-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <div className="border-b border-gray-200 px-4 py-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 flex items-center">
                 <div className="min-w-0 flex-1">
                     <h1 className="text-lg font-medium leading-6 text-gray-900 sm:truncate">Home</h1>
                 </div>
@@ -170,8 +170,6 @@ function Home() {
                 </button>
                 <Link
                   to={"/create"}
-                  // onClick={() => navigate("/create")}
-                  // onClick={() => setOpen(!open)}
                   type="button"
                   className="order-0 inline-flex items-center rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 sm:order-1 sm:ml-3"
                 >

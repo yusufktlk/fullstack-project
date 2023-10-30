@@ -10,7 +10,7 @@ import {
 import { Link, useNavigate } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Home', href: '/home', icon: HomeIcon, current: true },
+  { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'My tasks', href: '#', icon: Bars4Icon, current: false },
   { name: 'Recent', href: '#', icon: ClockIcon, current: false },
 ]
