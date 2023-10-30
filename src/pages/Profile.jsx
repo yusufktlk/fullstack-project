@@ -9,8 +9,8 @@ function Profile() {
         <main className='md:ml-20 mt-8 md:mt-20'>
             <div className="px-4 sm:px-0">
                 <h3 className="text-3xl font-semibold leading-7 text-gray-900">Profile Information</h3>
-                <p className="mt-1 md:mt-4  max-w-2xl text-base  leading-6 text-gray-500">User details</p>
-                <hr />
+                <p className="mt-3 md:mt-4  max-w-2xl text-base  leading-6 text-gray-500">User details</p>
+                <hr className='mt-1' />
             </div>
             
             <div className="mt-10">

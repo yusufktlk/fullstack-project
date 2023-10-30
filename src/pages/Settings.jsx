@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
+import Button from '../components/Button'
+import Input from '../components/Input'
+import { Link } from 'react-router-dom'
 
 function Settings() {
   const [firstName, setFirstName] = useState([])
@@ -11,11 +14,22 @@ function Settings() {
         <Sidebar />
 
         <main>
-            
 
-            {/* Settings forms */}
+            <div className="px-4 md:px-7 py-5 flex justify-between items-center">
+                <h1 className="text-lg font-medium text-gray-900 sm:truncate">Profile Settings</h1>       
+                <Link
+                  to={"/profile"}
+                  type="button"
+                  className="order-0 inline-flex items-center rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 sm:order-1 sm:ml-3"
+                >
+                  View Profile
+                </Link>
+            </div>
+            
+            <hr />
+
             <div className="">
-              <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
+              <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 px-4 py-4 md:py-14 sm:px-6 md:grid-cols-3 lg:px-8">
                 <div>
                   <h2 className="text-base font-semibold leading-7 text-black">Personal Information</h2>
                   <p className="mt-1 text-sm leading-6 text-gray-400">
@@ -23,21 +37,21 @@ function Settings() {
                   </p>
                 </div>
 
+
                 <form className="md:col-span-2">
-                  <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:max-w-xl sm:grid-cols-6">
+                  <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:max-w-xl sm:grid-cols-6">
                     <div className="col-span-full flex items-center gap-x-8">
                       <img
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt="avatar"
                         className="h-24 w-24 flex-none rounded-lg bg-gray-800 object-cover"
                       />
                       <div>
-                        <button
-                          type="button"
-                          className="rounded-md px-3 py-2 text-sm font-semibold text-white bg-indigo-500"
-                        >
-                          Change avatar
-                        </button>
+                        <Button 
+                        theme={"rgb(99 102 241)"}>
+                        Change avatar  
+                        </Button> 
+                        
                         <p className="mt-2 text-xs leading-5 text-gray-400">JPG, GIF or PNG. 1MB max.</p>
                       </div>
                     </div>
@@ -47,15 +61,12 @@ function Settings() {
                         First name
                       </label>
                       <div className="mt-2">
-                        <input
-                          onChange={(e) => setFirstName(e.target.value)}
-                          type="text"
-                          name="first-name"
-                          id="first-name"
-                          autoComplete="given-name"
-                          placeholder=' First name'
-                          className="block w-full rounded-md border-2 border-black py-1.5 text-black focus:ring-2 ring-black"
-                        />
+                        <Input
+                         onChange={(e) => setFirstName(e.target.value)}
+                         placeholder={"First Name"}
+                         id={"firstName"}
+                         type={"text"}
+                         />
                       </div>
                     </div>
 
@@ -64,14 +75,12 @@ function Settings() {
                         Last name
                       </label>
                       <div className="mt-2">
-                        <input
-                          onChange={(e) => setLastName(e.target.value)}
-                          type="text"
-                          name="last-name"
-                          id="last-name"
-                          autoComplete="family-name"
-                          placeholder=' Last name'
-                          className="block w-full rounded-md border-2 border-black py-1.5 text-black focus:ring-2 ring-black"                        />
+                      <Input
+                         onChange={(e) => setLastName(e.target.value)}
+                         placeholder={"Last Name"}
+                         id={"lastName"}
+                         type={"text"}
+                         />
                       </div>
                     </div>
 
@@ -80,14 +89,12 @@ function Settings() {
                         Email address
                       </label>
                       <div className="mt-2">
-                        <input
-                          onChange={(e) => setEmail(e.target.value)}
-                          id="email"
-                          name="email"
-                          type="email"
-                          autoComplete="email"
-                          placeholder=' Email'
-                          className="block w-full rounded-md border-2 border-black py-1.5 text-black focus:ring-2 ring-black"                        />
+                      <Input
+                         onChange={(e) => setEmail(e.target.value)}
+                         placeholder={"Email Address"}
+                         id={"email"}
+                         type={"text"}
+                         />
                       </div>
                     </div>
 
@@ -97,17 +104,15 @@ function Settings() {
                       </label>
                       <div className="mt-2">
                         <div className="flex rounded-md">
-                          <span className="flex select-none items-center pl-3 text-gray-400 sm:text-sm border-2 border-black rounded-md">
-                            example.com/
+                          <span className="flex select-none items-center pl-3 pr-2 font-bold text-gray-400 sm:text-sm border-2 border-gray-400 mr-1 rounded-md">
+                            example.com/  
                           </span>
-                          <input
-                            type="text"
-                            name="username"
-                            id="username"
-                            autoComplete="username"
-                            className="flex-1 ml-[0.5px]  bg-transparent py-1.5 pl-1 text-black border-black border-2 rounded-md focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder=" janesmith"
-                          />
+                          <Input
+                            onChange={(e) => setFirstName(e.target.value)}
+                            placeholder={"Username"}
+                            id={"username"}
+                            type={"text"}
+                            />
                         </div>
                       </div>
                     </div>
@@ -120,7 +125,7 @@ function Settings() {
                         <select
                           id="timezone"
                           name="timezone"
-                          className="block w-full rounded-md border-2 border-black py-1.5 "                        >
+                          className="block w-full rounded-md border-2 border-gray-400 py-1.5 "                        >
                           <option>Pacific Standard Time</option>
                           <option>Eastern Standard Time</option>
                           <option>Greenwich Mean Time</option>
@@ -129,20 +134,18 @@ function Settings() {
                     </div>
                   </div>
 
-                  <div className="mt-8 flex">
-                    <button
-                      type="submit"
-                      className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                    >
-                      Save
-                    </button>
+                  <div className="mt-8 flex w-40">
+                    <Button 
+                      theme={"rgb(99 102 241)"}>
+                      Save  
+                    </Button> 
                   </div>
                 </form>
               </div>
 
               <hr />
 
-              <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
+              <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-4 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
                 <div>
                   <h2 className="text-base font-semibold leading-7 text-black">Change password</h2>
                   <p className="mt-1 text-sm leading-6 text-gray-400">
@@ -157,13 +160,11 @@ function Settings() {
                         Current password
                       </label>
                       <div className="mt-2">
-                        <input
-                          id="current-password"
-                          name="current_password"
-                          type="password"
-                          autoComplete="current-password"
-                          placeholder=' ********************'
-                          className="block w-full rounded-md border-2 border-black py-1.5 text-black focus:ring-2 ring-black"                        />
+                        <Input 
+                            id={"current-password"}
+                            placeholder={"********************"}
+                            type={"password"}
+                        />
                       </div>
                     </div>
 
@@ -172,13 +173,11 @@ function Settings() {
                         New password
                       </label>
                       <div className="mt-2">
-                        <input
-                          id="new-password"
-                          name="new_password"
-                          type="password"
-                          autoComplete="new-password"
-                          placeholder=' ********************'
-                          className="block w-full rounded-md border-2 border-black py-1.5 text-black focus:ring-2 ring-black"                        />
+                      <Input 
+                            id={"new-password"}
+                            placeholder={"********************"}
+                            type={"password"}
+                        />
                       </div>
                     </div>
 
@@ -187,30 +186,26 @@ function Settings() {
                         Confirm password
                       </label>
                       <div className="mt-2">
-                        <input
-                          id="confirm-password"
-                          name="confirm_password"
-                          type="password"
-                          autoComplete="new-password"
-                          placeholder=' ********************'
-                          className="block w-full rounded-md border-2 border-black py-1.5 text-black focus:ring-2 ring-black"                        />
+                      <Input 
+                            id={"confirm-password"}
+                            placeholder={"********************"}
+                            type={"password"}
+                        />
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-8 flex">
-                    <button
-                      type="submit"
-                      className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                    >
-                      Save
-                    </button>
+                  <div className="mt-8 flex w-40">
+                    <Button 
+                      theme={"rgb(99 102 241)"}>
+                      Save  
+                    </Button> 
                   </div>
                 </form>
               </div>
 
                 <hr />
-              <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
+              <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-4 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
                 <div>
                   <h2 className="text-base font-semibold leading-7 text-black">Log out other sessions</h2>
                   <p className="mt-1 text-sm leading-6 text-gray-400">
@@ -226,24 +221,20 @@ function Settings() {
                         Your password
                       </label>
                       <div className="mt-2">
-                        <input
-                          id="logout-password"
-                          name="password"
-                          type="password"
-                          autoComplete="current-password"
-                          placeholder=' ***************'
-                          className="block w-full rounded-md border-2 border-black py-1.5 text-black focus:ring-2 ring-black"                        />
+                        <Input 
+                          id={"logout-password"}
+                          placeholder={"***************"}
+                          type={"password"}
+                        />
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-8 flex">
-                    <button
-                      type="submit"
-                      className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                    >
-                      Log out other sessions
-                    </button>
+                  <div className="mt-8 flex w-40 text-[14px] text-center">
+                    <Button 
+                      theme={"rgb(99 102 241)"}>
+                      Log out other sessions  
+                    </Button> 
                   </div>
                 </form>
               </div>
@@ -257,13 +248,13 @@ function Settings() {
                   </p>
                 </div>
 
-                <form className="flex items-start md:col-span-2">
-                  <button
-                    type="submit"
-                    className="rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-400"
-                  >
-                    Yes, delete my account
-                  </button>
+                <form className="flex items-start md:col-span-2 w-40 text-[14px] mt-6">
+                    <div className='bg-red'>
+                    <Button 
+                      theme="rgb(220 38 38)">
+                      Yes, delete my account
+                    </Button> 
+                    </div>
                 </form>
               </div>
             </div>
